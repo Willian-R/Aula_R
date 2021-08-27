@@ -26,8 +26,10 @@ library(neuralnet)
 rede <- neuralnet(case~age+parity+spontaneous+induced,
                   hidden = 5,
                   data = treino,
-                  rep = 10,
+                  rep = 4,
                   err.fct = "ce", ##ce = cross-entropy (classificação); sse = soma do erro quadrado (regressão)
                   lifesign = "minimal",
                   linear.output = FALSE,
                   stepmax = 1e6)
+
+plot(rede, rep = 2)
